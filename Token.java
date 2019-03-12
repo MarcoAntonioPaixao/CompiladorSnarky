@@ -18,6 +18,8 @@ class Token {
       tipo = "ABRE_PARENTESE";
     else if (conteudo == ')')
       tipo = "FECHA_PARENTESE";
+    else if (conteudo == ';')
+      tipo = "PONTO_VIRGULA";
     else if (ehOpAritmetico(conteudo))
       tipo = "OP_ARITMETICO";
 
