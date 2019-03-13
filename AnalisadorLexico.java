@@ -4,7 +4,7 @@ import java.util.List;
 class AnalisadorLexico {
   public static List<Token> Tokenize(String conteudoArquivo) throws TokenInvalidoException {
     List<Token> tokens = new ArrayList<>();
-    int numeroLinha = 0;
+    int numeroLinha = 1;
 
     for (int i = 0; i < conteudoArquivo.length(); i++) {
       if (conteudoArquivo.charAt(i) == '\n')
