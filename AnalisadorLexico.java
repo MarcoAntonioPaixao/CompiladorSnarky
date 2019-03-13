@@ -2,11 +2,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 class AnalisadorLexico {
-  public static List<Token> Tokenize(String conteudoArquivo) {
+  public static List<Token> Tokenize(String conteudoArquivo) throws TokenInvalidoException {
     List<Token> tokens = new ArrayList<>();
+    int numeroLinha = 0;
 
     for (int i = 0; i < conteudoArquivo.length(); i++) {
-      if (!ehEspacoBranco(conteudoArquivo.charAt(i))) {
+      if (conteudoArquivo.charAt(i) == '\n')
+        numeroLinha++;
+
+      if (!ehEspacoBranco(conteudoArquivo.charAt(i)) && !ehFimDeArquivo(conteudoArquivo.charAt(i))) {
         if (ehLetra(conteudoArquivo.charAt(i))) {
 
           // System.out.println("Adicionei id ou palavra reservada");
@@ -34,6 +38,9 @@ class AnalisadorLexico {
           Token token = Token.identificaTipoToken(conteudoArquivo.charAt(i));
           tokens.add(token);
 
+        } else {
+          throw new TokenInvalidoException(
+              "O token " + conteudoArquivo.charAt(i) + " localizado na linha " + numeroLinha + " eh invalido.");
         }
       }
 
@@ -58,6 +65,10 @@ class AnalisadorLexico {
   private static boolean ehTokenValido(char elemento) {
     return (elemento == '+' || elemento == '-' || elemento == '*' || elemento == '/' || elemento == '{'
         || elemento == '}' || elemento == '(' || elemento == ')' || elemento == ';');
+  }
+
+  private static boolean ehFimDeArquivo(char elemento) {
+    return elemento == '\n';
   }
 
   private static boolean ehEspacoBranco(char elemento) {
