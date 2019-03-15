@@ -41,13 +41,20 @@ class Token {
     }
   }
 
-  public static Token retornaNumero(String conteudoArquivo, int indiceAtual) {
+  public static Token retornaNumero(String conteudoArquivo, int indiceAtual) throws NumeroInvalidoException {
     String conteudoToken = "";
     boolean flagNumeroReal = false;
 
     while (ehElementoValidoNumero(conteudoArquivo.charAt(indiceAtual))) {
-      if (conteudoArquivo.charAt(indiceAtual) == '.')
+      if (conteudoArquivo.charAt(indiceAtual) == '.') {
         flagNumeroReal = true;
+        if (!Character.isDigit(conteudoArquivo.charAt(indiceAtual + 1))) {
+          throw new NumeroInvalidoException(
+              "O caractere " + conteudoArquivo.charAt(indiceAtual + 1) + " nao pode compor um numero real.");
+        }
+
+      }
+
       conteudoToken += conteudoArquivo.charAt(indiceAtual);
       indiceAtual++;
     }

@@ -21,9 +21,14 @@ class AnalisadorLexico {
         } else if (ehNumero(conteudoArquivo.charAt(i))) {
 
           // System.out.println("Adicionei numero");
-          Token numeroToken = Token.retornaNumero(conteudoArquivo, i);
-          i += numeroToken.conteudo.length() - 1;
-          tokens.add(numeroToken);
+          try {
+            Token numeroToken = Token.retornaNumero(conteudoArquivo, i);
+            i += numeroToken.conteudo.length() - 1;
+            tokens.add(numeroToken);
+          } catch (NumeroInvalidoException e) {
+            System.out.println("Erro na linha " + numeroLinha);
+            e.printStackTrace();
+          }
 
         } else if (ehOpLogico(conteudoArquivo.charAt(i))) {
 
