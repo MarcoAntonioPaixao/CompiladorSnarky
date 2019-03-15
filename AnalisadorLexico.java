@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 class AnalisadorLexico {
-  public static List<Token> Tokenize(String conteudoArquivo) throws TokenInvalidoException {
+  public static List<Token> Tokenize(String conteudoArquivo)
+      throws TokenInvalidoException, OpLogicoInvalidoException, NumeroInvalidoException {
     List<Token> tokens = new ArrayList<>();
     int numeroLinha = 1;
 
@@ -27,15 +28,19 @@ class AnalisadorLexico {
             tokens.add(numeroToken);
           } catch (NumeroInvalidoException e) {
             System.out.println("Erro na linha " + numeroLinha);
-            e.printStackTrace();
+            throw e;
           }
 
         } else if (ehOpLogico(conteudoArquivo.charAt(i))) {
-
-          // System.out.println("Adicionei operador logico");
-          Token opToken = Token.retornaOpLogico(conteudoArquivo, i);
-          i += opToken.conteudo.length();
-          tokens.add(opToken);
+          try {
+            // System.out.println("Adicionei operador logico");
+            Token opToken = Token.retornaOpLogico(conteudoArquivo, i);
+            i += opToken.conteudo.length();
+            tokens.add(opToken);
+          } catch (OpLogicoInvalidoException e) {
+            System.out.println("Erro na linha " + numeroLinha);
+            throw e;
+          }
 
         } else if (ehTokenValido(conteudoArquivo.charAt(i))) {
 

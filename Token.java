@@ -67,7 +67,7 @@ class Token {
 
   }
 
-  public static Token retornaOpLogico(String conteudoArquivo, int indiceAtual) {
+  public static Token retornaOpLogico(String conteudoArquivo, int indiceAtual) throws OpLogicoInvalidoException {
     String conteudoToken = "";
 
     if (conteudoArquivo.charAt(indiceAtual) == '=' && conteudoArquivo.charAt(indiceAtual + 1) != '=')
@@ -75,23 +75,25 @@ class Token {
     else {
       if (conteudoArquivo.charAt(indiceAtual) == '!')
         conteudoToken = "!";
-      if (conteudoArquivo.charAt(indiceAtual) == '!' && conteudoArquivo.charAt(indiceAtual + 1) == '=')
+      else if (conteudoArquivo.charAt(indiceAtual) == '!' && conteudoArquivo.charAt(indiceAtual + 1) == '=')
         conteudoToken = "!=";
-      if (conteudoArquivo.charAt(indiceAtual) == '=' && conteudoArquivo.charAt(indiceAtual + 1) == '=')
+      else if (conteudoArquivo.charAt(indiceAtual) == '=' && conteudoArquivo.charAt(indiceAtual + 1) == '=')
         conteudoToken = "==";
-      if (conteudoArquivo.charAt(indiceAtual) == '<' && conteudoArquivo.charAt(indiceAtual + 1) == '=')
+      else if (conteudoArquivo.charAt(indiceAtual) == '<' && conteudoArquivo.charAt(indiceAtual + 1) == '=')
         conteudoToken = "<=";
-      if (conteudoArquivo.charAt(indiceAtual) == '>' && conteudoArquivo.charAt(indiceAtual + 1) == '=')
+      else if (conteudoArquivo.charAt(indiceAtual) == '>' && conteudoArquivo.charAt(indiceAtual + 1) == '=')
         conteudoToken = ">=";
-      if (conteudoArquivo.charAt(indiceAtual) == '<' && conteudoArquivo.charAt(indiceAtual + 1) != '=')
+      else if (conteudoArquivo.charAt(indiceAtual) == '<' && conteudoArquivo.charAt(indiceAtual + 1) != '=')
         conteudoToken = "<";
-      if (conteudoArquivo.charAt(indiceAtual) == '>' && conteudoArquivo.charAt(indiceAtual + 1) != '=')
+      else if (conteudoArquivo.charAt(indiceAtual) == '>' && conteudoArquivo.charAt(indiceAtual + 1) != '=')
         conteudoToken = ">";
-      if (conteudoArquivo.charAt(indiceAtual) == '&' && conteudoArquivo.charAt(indiceAtual + 1) == '&')
+      else if (conteudoArquivo.charAt(indiceAtual) == '&' && conteudoArquivo.charAt(indiceAtual + 1) == '&')
         conteudoToken = "&&";
-      if (conteudoArquivo.charAt(indiceAtual) == '|' && conteudoArquivo.charAt(indiceAtual + 1) == '|')
+      else if (conteudoArquivo.charAt(indiceAtual) == '|' && conteudoArquivo.charAt(indiceAtual + 1) == '|')
         conteudoToken = "||";
-
+      else
+        throw new OpLogicoInvalidoException("O operador logico " + conteudoArquivo.charAt(indiceAtual)
+            + conteudoArquivo.charAt(indiceAtual + 1) + " nao eh um operador valido.");
       return new Token(conteudoToken, "OP_LOGICO");
     }
 

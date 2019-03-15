@@ -13,6 +13,10 @@ class App {
 
     } catch (TokenInvalidoException e) {
       e.printStackTrace();
+    } catch (NumeroInvalidoException e) {
+      e.printStackTrace();
+    } catch (OpLogicoInvalidoException e) {
+      e.printStackTrace();
     }
 
   }
