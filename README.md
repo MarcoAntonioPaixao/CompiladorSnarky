@@ -17,7 +17,7 @@ Isso irá compilar seu código e gravar os arquivos .class resultantes no diret�
 No diretório raiz do projeto usar o comando:
 
 ```bash
-  java CompiladorUnbending <arquivo fonte>
+  java Snarky <arquivo fonte>
 ```
 
 Esse comando assume que o arquivo fonte esteja no diretorio raiz.
