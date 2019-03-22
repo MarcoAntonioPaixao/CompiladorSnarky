@@ -12,10 +12,13 @@ class App {
       }
 
     } catch (TokenInvalidoException e) {
+      System.out.println("Ei programador, voce tem certeza que esta programando na linguagem correta?");
       e.printStackTrace();
     } catch (NumeroInvalidoException e) {
+      System.out.println("Então, numeros não deveriam ser escritos desta maneira.");
       e.printStackTrace();
     } catch (OpLogicoInvalidoException e) {
+      System.out.println("Isso não é lógico!!!.");
       e.printStackTrace();
     }
 
