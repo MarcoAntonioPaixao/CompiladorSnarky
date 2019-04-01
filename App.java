@@ -8,7 +8,7 @@ class App {
       List<Token> tokens = AnalisadorLexico.Tokenize(conteudoArquivo);
 
       for (int i = 0; i < tokens.size(); i++) {
-        System.out.println(tokens.get(i).conteudo);
+        System.out.println(tokens.get(i).conteudo + " " + tokens.get(i).tipoToken);
       }
 
     } catch (TokenInvalidoException e) {

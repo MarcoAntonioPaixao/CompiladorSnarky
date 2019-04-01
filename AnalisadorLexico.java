@@ -5,11 +5,11 @@ class AnalisadorLexico {
   public static List<Token> Tokenize(String conteudoArquivo)
       throws TokenInvalidoException, OpLogicoInvalidoException, NumeroInvalidoException {
     List<Token> tokens = new ArrayList<>();
-    int numeroLinha = 1;
+    int numeroLinha = 1;// apenas para saber onde o erro ocorreu
 
     for (int i = 0; i < conteudoArquivo.length(); i++) {
       if (conteudoArquivo.charAt(i) == '\n')
-        numeroLinha++;
+        numeroLinha++;// controle do numero de linhas
 
       if (!ehEspacoBranco(conteudoArquivo.charAt(i)) && !ehFimDeArquivo(conteudoArquivo.charAt(i))) {
         if (ehLetra(conteudoArquivo.charAt(i))) {
@@ -35,7 +35,7 @@ class AnalisadorLexico {
           try {
             // System.out.println("Adicionei operador logico");
             Token opToken = Token.retornaOpLogico(conteudoArquivo, i);
-            i += opToken.conteudo.length();
+            i += opToken.conteudo.length() - 1;
             tokens.add(opToken);
           } catch (OpLogicoInvalidoException e) {
             System.out.println("Erro na linha " + numeroLinha);
@@ -46,6 +46,7 @@ class AnalisadorLexico {
 
           // System.out.println("Adicionei tipo de token extra");
           Token token = Token.identificaTipoToken(conteudoArquivo.charAt(i));
+          i += token.conteudo.length() - 1;
           tokens.add(token);
 
         } else {
