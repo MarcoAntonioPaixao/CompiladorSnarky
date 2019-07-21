@@ -14,6 +14,10 @@ class Token {
       tipo = "ABRE_CHAVE";
     else if (conteudo == '}')
       tipo = "FECHA_CHAVE";
+    else if (conteudo == '[')
+      tipo = "ABRE_NOT";
+    else if (conteudo == ']')
+      tipo = "FECHA_NOT";
     else if (conteudo == '(')
       tipo = "ABRE_PARENTESE";
     else if (conteudo == ')')
@@ -35,7 +39,14 @@ class Token {
     }
 
     if (ehPalavraReservada(conteudoToken)) {
-      return new Token(conteudoToken, "RESERVADA");
+      if (ehProc(conteudoToken))
+        return new Token(conteudoToken, "PROC");
+      else if (ehTipo(conteudoToken))
+        return new Token(conteudoToken, "TIPO");
+      else
+        return new Token(conteudoToken, "RESERVADA");
+    } else if (ehValorBooleano(conteudoToken)) {
+      return new Token(conteudoToken, "VALOR_BOOLEANO");
     } else {
       return new Token(conteudoToken, "ID");
     }
@@ -60,9 +71,9 @@ class Token {
     }
 
     if (flagNumeroReal) {
-      return new Token(conteudoToken, "NUMERO_REAL");
+      return new Token(conteudoToken, "VALOR_REAL");
     } else {
-      return new Token(conteudoToken, "NUMERO_INTEIRO");
+      return new Token(conteudoToken, "VALOR_INTEIRO");
     }
 
   }
@@ -70,14 +81,30 @@ class Token {
   public static Token retornaOpLogico(String conteudoArquivo, int indiceAtual) throws OpLogicoInvalidoException {
     String conteudoToken = "";
 
+    if (conteudoArquivo.charAt(indiceAtual) == '!')
+      conteudoToken = "!";
+    else if (conteudoArquivo.charAt(indiceAtual) == '&' && conteudoArquivo.charAt(indiceAtual + 1) == '&')
+      conteudoToken = "&&";
+    else if (conteudoArquivo.charAt(indiceAtual) == '|' && conteudoArquivo.charAt(indiceAtual + 1) == '|')
+      conteudoToken = "||";
+    else
+      throw new OpLogicoInvalidoException("O operador logico " + conteudoArquivo.charAt(indiceAtual)
+          + conteudoArquivo.charAt(indiceAtual + 1) + " nao eh um operador valido.");
+
+    if (conteudoArquivo.charAt(indiceAtual) == '!')
+      return new Token(conteudoToken, "NOT");
+    else
+      return new Token(conteudoToken, "OP_LOGICO");
+
+  }
+
+  public static Token retornaOpRelacional(String conteudoArquivo, int indiceAtual) throws OpLogicoInvalidoException {
+    String conteudoToken = "";
+
     if (conteudoArquivo.charAt(indiceAtual) == '=' && conteudoArquivo.charAt(indiceAtual + 1) != '=')
       return new Token("=", "ATRIBUICAO");
     else {
-      if (conteudoArquivo.charAt(indiceAtual) == '!')
-        conteudoToken = "!";
-      else if (conteudoArquivo.charAt(indiceAtual) == '!' && conteudoArquivo.charAt(indiceAtual + 1) == '=')
-        conteudoToken = "!=";
-      else if (conteudoArquivo.charAt(indiceAtual) == '=' && conteudoArquivo.charAt(indiceAtual + 1) == '=')
+      if (conteudoArquivo.charAt(indiceAtual) == '=' && conteudoArquivo.charAt(indiceAtual + 1) == '=')
         conteudoToken = "==";
       else if (conteudoArquivo.charAt(indiceAtual) == '<' && conteudoArquivo.charAt(indiceAtual + 1) == '=')
         conteudoToken = "<=";
@@ -87,14 +114,10 @@ class Token {
         conteudoToken = "<";
       else if (conteudoArquivo.charAt(indiceAtual) == '>' && conteudoArquivo.charAt(indiceAtual + 1) != '=')
         conteudoToken = ">";
-      else if (conteudoArquivo.charAt(indiceAtual) == '&' && conteudoArquivo.charAt(indiceAtual + 1) == '&')
-        conteudoToken = "&&";
-      else if (conteudoArquivo.charAt(indiceAtual) == '|' && conteudoArquivo.charAt(indiceAtual + 1) == '|')
-        conteudoToken = "||";
       else
-        throw new OpLogicoInvalidoException("O operador logico " + conteudoArquivo.charAt(indiceAtual)
+        throw new OpLogicoInvalidoException("O operador relacional " + conteudoArquivo.charAt(indiceAtual)
             + conteudoArquivo.charAt(indiceAtual + 1) + " nao eh um operador valido.");
-      return new Token(conteudoToken, "OP_LOGICO");
+      return new Token(conteudoToken, "OP_RELACIONAL");
     }
 
   }
@@ -107,6 +130,18 @@ class Token {
     return (palavra.equals("else") || palavra.equals("if") || palavra.equals("do") || palavra.equals("while")
         || palavra.equals("read") || palavra.equals("write") || palavra.equals("int") || palavra.equals("float")
         || palavra.equals("boolean"));
+  }
+
+  private static boolean ehValorBooleano(String palavra) {
+    return (palavra.equals("true") || palavra.equals("false"));
+  }
+
+  private static boolean ehProc(String palavra) {
+    return (palavra.equals("read") || palavra.equals("write"));
+  }
+
+  private static boolean ehTipo(String palavra) {
+    return (palavra.equals("int") || palavra.equals("float") || palavra.equals("boolean"));
   }
 
   private static boolean ehElementoValidoNumero(char elemento) {

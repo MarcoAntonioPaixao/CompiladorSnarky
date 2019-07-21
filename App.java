@@ -6,10 +6,7 @@ class App {
 
     try {
       List<Token> tokens = AnalisadorLexico.Tokenize(conteudoArquivo);
-
-      for (int i = 0; i < tokens.size(); i++) {
-        System.out.println(tokens.get(i).conteudo + " " + tokens.get(i).tipoToken);
-      }
+      // imprimeTokens(tokens);
 
     } catch (TokenInvalidoException e) {
       System.out.println("Ei programador, voce tem certeza que esta programando na linguagem correta?");
@@ -23,5 +20,11 @@ class App {
     }
 
   }
+
+  // private static void imprimeTokens(List<Token> tokens) {
+  // for (int i = 0; i < tokens.size(); i++) {
+  // System.out.println(tokens.get(i).conteudo + " " + tokens.get(i).tipoToken);
+  // }
+  // }
 
 }

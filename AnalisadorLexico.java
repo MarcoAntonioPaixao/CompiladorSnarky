@@ -42,6 +42,17 @@ class AnalisadorLexico {
             throw e;
           }
 
+        } else if (ehOpRelacional(conteudoArquivo.charAt(i))) {
+          try {
+            // System.out.println("Adicionei operador relacional");
+            Token opToken = Token.retornaOpRelacional(conteudoArquivo, i);
+            i += opToken.conteudo.length() - 1;
+            tokens.add(opToken);
+          } catch (OpLogicoInvalidoException e) {
+            System.out.println("Erro na linha " + numeroLinha);
+            throw e;
+          }
+
         } else if (ehTokenValido(conteudoArquivo.charAt(i))) {
 
           // System.out.println("Adicionei tipo de token extra");
@@ -69,13 +80,17 @@ class AnalisadorLexico {
   }
 
   private static boolean ehOpLogico(char elemento) {
-    return (elemento == '<' || elemento == '>' || elemento == '=' || elemento == '!' || elemento == '&'
-        || elemento == '|');
+    return (elemento == '&' || elemento == '|' || elemento == '!');
+  }
+
+  private static boolean ehOpRelacional(char elemento) {
+    return (elemento == '<' || elemento == '>' || elemento == '=');
   }
 
   private static boolean ehTokenValido(char elemento) {
     return (elemento == '+' || elemento == '-' || elemento == '*' || elemento == '/' || elemento == '{'
-        || elemento == '}' || elemento == '(' || elemento == ')' || elemento == ';');
+        || elemento == '}' || elemento == '(' || elemento == ')' || elemento == ';' || elemento == '['
+        || elemento == ']');
   }
 
   private static boolean ehFimDeArquivo(char elemento) {
