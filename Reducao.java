@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,5 +10,6 @@ public class Reducao {
 
     public Reducao(String naoTerminal) {
         this.naoTerminal = naoTerminal;
+        this.transformacoes = new ArrayList<String>();
     }
 }

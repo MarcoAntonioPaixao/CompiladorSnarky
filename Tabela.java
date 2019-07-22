@@ -1,10 +1,15 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Tabela
  */
 public class Tabela {
-    private List<EstadoSintatico> estados;
-    private List<Reducao> reducoes;
+    public List<EstadoSintatico> estados;
+    public List<Reducao> reducoes;
 
+    public Tabela() {
+        this.estados = new ArrayList<EstadoSintatico>();
+        this.reducoes = new ArrayList<Reducao>();
+    }
 }

@@ -1,9 +1,15 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * EstadoSintatico
  */
 public class EstadoSintatico {
-    List<AcaoSintatica> acoes;
-    List<Transicao> transicoes;
+    public List<AcaoSintatica> acoes;
+    public List<Transicao> transicoes;
+
+    public EstadoSintatico() {
+        this.acoes = new ArrayList<AcaoSintatica>();
+        this.transicoes = new ArrayList<Transicao>();
+    }
 }
