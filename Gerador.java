@@ -21,7 +21,7 @@ public class Gerador {
         tabela.estados.add(estado0);
 
         EstadoSintatico estado1 = new EstadoSintatico();
-        estado1.acoes.add(new AcaoSintatica("$", new Acao("acc", null)));
+        estado1.acoes.add(new AcaoSintatica("$", new Acao("acc", 0)));
         tabela.estados.add(estado1);
 
         EstadoSintatico estado2 = new EstadoSintatico();
@@ -399,9 +399,382 @@ public class Gerador {
         estado52.acoes.add(new AcaoSintatica("PONTO_VIRGULA", new Acao("empilha", 69)));
         tabela.estados.add(estado52);
 
+        EstadoSintatico estado53 = new EstadoSintatico();
+        estado53.acoes.add(new AcaoSintatica("ID", new Acao("empilha", 37)));
+        estado53.acoes.add(new AcaoSintatica("ABRE_PARENTESE", new Acao("empilha", 36)));
+        estado53.transicoes.add(new Transicao("MID", 70));
+        estado53.transicoes.add(new Transicao("INF", 35));
+        tabela.estados.add(estado53);
+
+        EstadoSintatico estado54 = new EstadoSintatico();
+        estado54.acoes.add(new AcaoSintatica("ID", new Acao("empilha", 37)));
+        estado54.acoes.add(new AcaoSintatica("ABRE_PARENTESE", new Acao("empilha", 36)));
+        estado54.transicoes.add(new Transicao("MID", 71));
+        estado54.transicoes.add(new Transicao("INF", 35));
+        tabela.estados.add(estado54);
+
+        EstadoSintatico estado55 = new EstadoSintatico();
+        estado55.acoes.add(new AcaoSintatica("ID", new Acao("empilha", 37)));
+        estado55.acoes.add(new AcaoSintatica("ABRE_PARENTESE", new Acao("empilha", 36)));
+        estado55.transicoes.add(new Transicao("INF", 72));
+        tabela.estados.add(estado55);
+
+        EstadoSintatico estado56 = new EstadoSintatico();
+        estado56.acoes.add(new AcaoSintatica("ID", new Acao("empilha", 37)));
+        estado56.acoes.add(new AcaoSintatica("ABRE_PARENTESE", new Acao("empilha", 36)));
+        estado56.transicoes.add(new Transicao("INF", 73));
+        tabela.estados.add(estado56);
+
+        EstadoSintatico estado57 = new EstadoSintatico();
+        estado57.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("empilha", 74)));
+        estado57.acoes.add(new AcaoSintatica("MAIS", new Acao("empilha", 53)));
+        estado57.acoes.add(new AcaoSintatica("MENOS", new Acao("empilha", 54)));
+        tabela.estados.add(estado57);
+
+        EstadoSintatico estado58 = new EstadoSintatico();
+        estado58.acoes.add(new AcaoSintatica("ABRE_CHAVE", new Acao("empilha", 25)));
+        estado58.transicoes.add(new Transicao("BK", 75));
+        tabela.estados.add(estado58);
+
+        EstadoSintatico estado59 = new EstadoSintatico();
+        estado59.acoes.add(new AcaoSintatica("ABRE_PARENTESE", new Acao("empilha", 76)));
+        tabela.estados.add(estado59);
+
+        EstadoSintatico estado60 = new EstadoSintatico();
+        estado60.acoes.add(new AcaoSintatica("ABRE_PARENTESE", new Acao("empilha", 77)));
+        tabela.estados.add(estado60);
+
+        EstadoSintatico estado61 = new EstadoSintatico();
+        estado61.acoes.add(new AcaoSintatica("ID", new Acao("empilha", 80)));
+        estado61.acoes.add(new AcaoSintatica("VALOR_BOOLEANO", new Acao("empilha", 78)));
+        estado61.acoes.add(new AcaoSintatica("NOT", new Acao("empilha", 40)));
+        estado61.transicoes.add(new Transicao("BOOL_S", 81));
+        estado61.transicoes.add(new Transicao("OP", 79));
+        estado61.transicoes.add(new Transicao("OP_REL", 43));
+        estado61.transicoes.add(new Transicao("OP_LO", 44));
+        tabela.estados.add(estado61);
+
+        EstadoSintatico estado62 = new EstadoSintatico();
+        estado62.acoes.add(new AcaoSintatica("ABRE_CHAVE", new Acao("empilha", 25)));
+        estado62.transicoes.add(new Transicao("BK", 82));
+        tabela.estados.add(estado62);
+
+        EstadoSintatico estado63 = new EstadoSintatico();
+        estado63.acoes.add(new AcaoSintatica("ID", new Acao("empilha", 42)));
+        estado63.acoes.add(new AcaoSintatica("VALOR_BOOLEANO", new Acao("empilha", 39)));
+        estado63.acoes.add(new AcaoSintatica("NOT", new Acao("empilha", 40)));
+        estado63.transicoes.add(new Transicao("BOOL_S", 83));
+        estado63.transicoes.add(new Transicao("OP", 41));
+        estado63.transicoes.add(new Transicao("OP_REL", 43));
+        estado63.transicoes.add(new Transicao("OP_LO", 44));
+        tabela.estados.add(estado63);
+
+        EstadoSintatico estado64 = new EstadoSintatico();
+        estado64.acoes.add(new AcaoSintatica("TIPO", new Acao("reduzir", 26)));
+        estado64.acoes.add(new AcaoSintatica("ID", new Acao("reduzir", 26)));
+        estado64.acoes.add(new AcaoSintatica("IF", new Acao("reduzir", 26)));
+        estado64.acoes.add(new AcaoSintatica("ELSE", new Acao("reduzir", 26)));
+        estado64.acoes.add(new AcaoSintatica("FECHA_CHAVE", new Acao("reduzir", 26)));
+        estado64.acoes.add(new AcaoSintatica("WHILE", new Acao("reduzir", 26)));
+        estado64.acoes.add(new AcaoSintatica("DO", new Acao("reduzir", 26)));
+        estado64.acoes.add(new AcaoSintatica("READ", new Acao("reduzir", 26)));
+        estado64.acoes.add(new AcaoSintatica("WRITE", new Acao("reduzir", 26)));
+        estado64.acoes.add(new AcaoSintatica("$", new Acao("reduzir", 26)));
+        tabela.estados.add(estado64);
+
+        EstadoSintatico estado65 = new EstadoSintatico();
+        estado65.acoes.add(new AcaoSintatica("PONTO_VIRGULA", new Acao("empilhar", 84)));
+        tabela.estados.add(estado65);
+
+        EstadoSintatico estado66 = new EstadoSintatico();
+        estado66.acoes.add(new AcaoSintatica("PONTO_VIRGULA", new Acao("empilhar", 85)));
+        tabela.estados.add(estado66);
+
+        EstadoSintatico estado67 = new EstadoSintatico();
+        estado67.acoes.add(new AcaoSintatica("PONTO_VIRGULA", new Acao("empilhar", 86)));
+        tabela.estados.add(estado67);
+
+        EstadoSintatico estado68 = new EstadoSintatico();
+        estado68.acoes.add(new AcaoSintatica("TIPO", new Acao("reduzir", 12)));
+        estado68.acoes.add(new AcaoSintatica("ID", new Acao("reduzir", 12)));
+        estado68.acoes.add(new AcaoSintatica("IF", new Acao("reduzir", 12)));
+        estado68.acoes.add(new AcaoSintatica("ELSE", new Acao("reduzir", 12)));
+        estado68.acoes.add(new AcaoSintatica("FECHA_CHAVE", new Acao("reduzir", 12)));
+        estado68.acoes.add(new AcaoSintatica("WHILE", new Acao("reduzir", 12)));
+        estado68.acoes.add(new AcaoSintatica("DO", new Acao("reduzir", 12)));
+        estado68.acoes.add(new AcaoSintatica("READ", new Acao("reduzir", 12)));
+        estado68.acoes.add(new AcaoSintatica("WRITE", new Acao("reduzir", 12)));
+        estado68.acoes.add(new AcaoSintatica("$", new Acao("reduzir", 12)));
+        tabela.estados.add(estado68);
+
+        EstadoSintatico estado69 = new EstadoSintatico();
+        estado69.acoes.add(new AcaoSintatica("TIPO", new Acao("reduzir", 13)));
+        estado69.acoes.add(new AcaoSintatica("ID", new Acao("reduzir", 13)));
+        estado69.acoes.add(new AcaoSintatica("IF", new Acao("reduzir", 13)));
+        estado69.acoes.add(new AcaoSintatica("ELSE", new Acao("reduzir", 13)));
+        estado69.acoes.add(new AcaoSintatica("FECHA_CHAVE", new Acao("reduzir", 13)));
+        estado69.acoes.add(new AcaoSintatica("WHILE", new Acao("reduzir", 13)));
+        estado69.acoes.add(new AcaoSintatica("DO", new Acao("reduzir", 13)));
+        estado69.acoes.add(new AcaoSintatica("READ", new Acao("reduzir", 13)));
+        estado69.acoes.add(new AcaoSintatica("WRITE", new Acao("reduzir", 13)));
+        estado69.acoes.add(new AcaoSintatica("$", new Acao("reduzir", 13)));
+        tabela.estados.add(estado69);
+
+        EstadoSintatico estado70 = new EstadoSintatico();
+        estado70.acoes.add(new AcaoSintatica("PONTO_VIRGULA", new Acao("reduzir", 36)));
+        estado70.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 36)));
+        estado70.acoes.add(new AcaoSintatica("MAIS", new Acao("reduzir", 36)));
+        estado70.acoes.add(new AcaoSintatica("MENOS", new Acao("reduzir", 36)));
+        estado70.acoes.add(new AcaoSintatica("VEZES", new Acao("empilhar", 55)));
+        estado70.acoes.add(new AcaoSintatica("DIVIDIR", new Acao("empilhar", 56)));
+        tabela.estados.add(estado70);
+
+        EstadoSintatico estado71 = new EstadoSintatico();
+        estado71.acoes.add(new AcaoSintatica("PONTO_VIRGULA", new Acao("reduzir", 37)));
+        estado71.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 37)));
+        estado71.acoes.add(new AcaoSintatica("MAIS", new Acao("reduzir", 37)));
+        estado71.acoes.add(new AcaoSintatica("MENOS", new Acao("reduzir", 37)));
+        estado71.acoes.add(new AcaoSintatica("VEZES", new Acao("empilhar", 55)));
+        estado71.acoes.add(new AcaoSintatica("DIVIDIR", new Acao("empilhar", 56)));
+        tabela.estados.add(estado71);
+
+        EstadoSintatico estado72 = new EstadoSintatico();
+        estado72.acoes.add(new AcaoSintatica("PONTO_VIRGULA", new Acao("reduzir", 39)));
+        estado72.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 39)));
+        estado72.acoes.add(new AcaoSintatica("MAIS", new Acao("reduzir", 39)));
+        estado72.acoes.add(new AcaoSintatica("MENOS", new Acao("reduzir", 39)));
+        estado72.acoes.add(new AcaoSintatica("VEZES", new Acao("reduzir", 39)));
+        estado72.acoes.add(new AcaoSintatica("DIVIDIR", new Acao("reduzir", 39)));
+        tabela.estados.add(estado72);
+
+        EstadoSintatico estado73 = new EstadoSintatico();
+        estado73.acoes.add(new AcaoSintatica("PONTO_VIRGULA", new Acao("reduzir", 40)));
+        estado73.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 40)));
+        estado73.acoes.add(new AcaoSintatica("MAIS", new Acao("reduzir", 40)));
+        estado73.acoes.add(new AcaoSintatica("MENOS", new Acao("reduzir", 40)));
+        estado73.acoes.add(new AcaoSintatica("VEZES", new Acao("reduzir", 40)));
+        estado73.acoes.add(new AcaoSintatica("DIVIDIR", new Acao("reduzir", 40)));
+        tabela.estados.add(estado73);
+
+        EstadoSintatico estado74 = new EstadoSintatico();
+        estado74.acoes.add(new AcaoSintatica("PONTO_VIRGULA", new Acao("reduzir", 42)));
+        estado74.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 42)));
+        estado74.acoes.add(new AcaoSintatica("MAIS", new Acao("reduzir", 42)));
+        estado74.acoes.add(new AcaoSintatica("MENOS", new Acao("reduzir", 42)));
+        estado74.acoes.add(new AcaoSintatica("VEZES", new Acao("reduzir", 42)));
+        estado74.acoes.add(new AcaoSintatica("DIVIDIR", new Acao("reduzir", 42)));
+        tabela.estados.add(estado74);
+
+        EstadoSintatico estado75 = new EstadoSintatico();
+        estado75.acoes.add(new AcaoSintatica("TIPO", new Acao("reduzir", 18)));
+        estado75.acoes.add(new AcaoSintatica("ID", new Acao("reduzir", 18)));
+        estado75.acoes.add(new AcaoSintatica("IF", new Acao("reduzir", 18)));
+        estado75.acoes.add(new AcaoSintatica("ELSE", new Acao("reduzir", 18)));
+        estado75.acoes.add(new AcaoSintatica("FECHA_CHAVE", new Acao("reduzir", 18)));
+        estado75.acoes.add(new AcaoSintatica("WHILE", new Acao("reduzir", 18)));
+        estado75.acoes.add(new AcaoSintatica("DO", new Acao("reduzir", 18)));
+        estado75.acoes.add(new AcaoSintatica("READ", new Acao("reduzir", 18)));
+        estado75.acoes.add(new AcaoSintatica("WRITE", new Acao("reduzir", 18)));
+        estado75.acoes.add(new AcaoSintatica("$", new Acao("reduzir", 18)));
+        tabela.estados.add(estado75);
+
+        EstadoSintatico estado76 = new EstadoSintatico();
+        estado76.acoes.add(new AcaoSintatica("ID", new Acao("empilha", 42)));
+        estado76.acoes.add(new AcaoSintatica("VALOR_BOOLEANO", new Acao("empilha", 39)));
+        estado76.acoes.add(new AcaoSintatica("NOT", new Acao("empilha", 40)));
+        estado76.transicoes.add(new Transicao("BOOL_S", 83));
+        estado76.transicoes.add(new Transicao("OP", 41));
+        estado76.transicoes.add(new Transicao("OP_REL", 43));
+        estado76.transicoes.add(new Transicao("OP_LO", 44));
+        tabela.estados.add(estado76);
+
+        EstadoSintatico estado77 = new EstadoSintatico();
+        estado77.acoes.add(new AcaoSintatica("ID", new Acao("empilha", 42)));
+        estado77.acoes.add(new AcaoSintatica("VALOR_BOOLEANO", new Acao("empilha", 39)));
+        estado77.acoes.add(new AcaoSintatica("NOT", new Acao("empilha", 40)));
+        estado77.transicoes.add(new Transicao("BOOL_S", 83));
+        estado77.transicoes.add(new Transicao("OP", 41));
+        estado77.transicoes.add(new Transicao("OP_REL", 43));
+        estado77.transicoes.add(new Transicao("OP_LO", 44));
+        tabela.estados.add(estado77);
+
+        EstadoSintatico estado78 = new EstadoSintatico();
+        estado78.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 20)));
+        estado78.acoes.add(new AcaoSintatica("FECHA_NOT", new Acao("empilhar", 90)));
+        estado78.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 20)));
+        estado78.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 20)));
+        tabela.estados.add(estado78);
+
+        EstadoSintatico estado79 = new EstadoSintatico();
+        estado79.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 22)));
+        estado79.acoes.add(new AcaoSintatica("FECHA_NOT", new Acao("empilhar", 91)));
+        estado79.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 22)));
+        estado79.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 22)));
+        tabela.estados.add(estado79);
+
+        EstadoSintatico estado80 = new EstadoSintatico();
+        estado80.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 24)));
+        estado80.acoes.add(new AcaoSintatica("FECHA_NOT", new Acao("empilhar", 92)));
+        estado80.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 24)));
+        estado80.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 24)));
+        tabela.estados.add(estado80);
+
+        EstadoSintatico estado81 = new EstadoSintatico();
+        estado81.acoes.add(new AcaoSintatica("OP_REL", new Acao("empilhar", 59)));
+        estado81.acoes.add(new AcaoSintatica("OP_LO", new Acao("empilhar", 60)));
+        tabela.estados.add(estado81);
+
+        EstadoSintatico estado82 = new EstadoSintatico();
+        estado82.acoes.add(new AcaoSintatica("TIPO", new Acao("reduzir", 27)));
+        estado82.acoes.add(new AcaoSintatica("ID", new Acao("reduzir", 27)));
+        estado82.acoes.add(new AcaoSintatica("IF", new Acao("reduzir", 27)));
+        estado82.acoes.add(new AcaoSintatica("ELSE", new Acao("reduzir", 27)));
+        estado82.acoes.add(new AcaoSintatica("FECHA_CHAVE", new Acao("reduzir", 27)));
+        estado82.acoes.add(new AcaoSintatica("WHILE", new Acao("reduzir", 27)));
+        estado82.acoes.add(new AcaoSintatica("DO", new Acao("reduzir", 27)));
+        estado82.acoes.add(new AcaoSintatica("READ", new Acao("reduzir", 27)));
+        estado82.acoes.add(new AcaoSintatica("WRITE", new Acao("reduzir", 27)));
+        estado82.acoes.add(new AcaoSintatica("$", new Acao("reduzir", 27)));
+        tabela.estados.add(estado82);
+
+        EstadoSintatico estado83 = new EstadoSintatico();
+        estado83.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("empilhar", 93)));
+        estado83.acoes.add(new AcaoSintatica("OP_REL", new Acao("empilhar", 59)));
+        estado83.acoes.add(new AcaoSintatica("OP_LO", new Acao("empilhar", 60)));
+        tabela.estados.add(estado83);
+
+        EstadoSintatico estado84 = new EstadoSintatico();
+        estado84.acoes.add(new AcaoSintatica("TIPO", new Acao("reduzir", 33)));
+        estado84.acoes.add(new AcaoSintatica("ID", new Acao("reduzir", 33)));
+        estado84.acoes.add(new AcaoSintatica("IF", new Acao("reduzir", 33)));
+        estado84.acoes.add(new AcaoSintatica("ELSE", new Acao("reduzir", 33)));
+        estado84.acoes.add(new AcaoSintatica("FECHA_CHAVE", new Acao("reduzir", 33)));
+        estado84.acoes.add(new AcaoSintatica("WHILE", new Acao("reduzir", 33)));
+        estado84.acoes.add(new AcaoSintatica("DO", new Acao("reduzir", 33)));
+        estado84.acoes.add(new AcaoSintatica("READ", new Acao("reduzir", 33)));
+        estado84.acoes.add(new AcaoSintatica("WRITE", new Acao("reduzir", 33)));
+        estado84.acoes.add(new AcaoSintatica("$", new Acao("reduzir", 33)));
+        tabela.estados.add(estado84);
+
+        EstadoSintatico estado85 = new EstadoSintatico();
+        estado85.acoes.add(new AcaoSintatica("TIPO", new Acao("reduzir", 34)));
+        estado85.acoes.add(new AcaoSintatica("ID", new Acao("reduzir", 34)));
+        estado85.acoes.add(new AcaoSintatica("IF", new Acao("reduzir", 34)));
+        estado85.acoes.add(new AcaoSintatica("ELSE", new Acao("reduzir", 34)));
+        estado85.acoes.add(new AcaoSintatica("FECHA_CHAVE", new Acao("reduzir", 34)));
+        estado85.acoes.add(new AcaoSintatica("WHILE", new Acao("reduzir", 34)));
+        estado85.acoes.add(new AcaoSintatica("DO", new Acao("reduzir", 34)));
+        estado85.acoes.add(new AcaoSintatica("READ", new Acao("reduzir", 34)));
+        estado85.acoes.add(new AcaoSintatica("WRITE", new Acao("reduzir", 34)));
+        estado85.acoes.add(new AcaoSintatica("$", new Acao("reduzir", 34)));
+        tabela.estados.add(estado85);
+
+        EstadoSintatico estado86 = new EstadoSintatico();
+        estado86.acoes.add(new AcaoSintatica("TIPO", new Acao("reduzir", 35)));
+        estado86.acoes.add(new AcaoSintatica("ID", new Acao("reduzir", 35)));
+        estado86.acoes.add(new AcaoSintatica("IF", new Acao("reduzir", 35)));
+        estado86.acoes.add(new AcaoSintatica("ELSE", new Acao("reduzir", 35)));
+        estado86.acoes.add(new AcaoSintatica("FECHA_CHAVE", new Acao("reduzir", 35)));
+        estado86.acoes.add(new AcaoSintatica("WHILE", new Acao("reduzir", 35)));
+        estado86.acoes.add(new AcaoSintatica("DO", new Acao("reduzir", 35)));
+        estado86.acoes.add(new AcaoSintatica("READ", new Acao("reduzir", 35)));
+        estado86.acoes.add(new AcaoSintatica("WRITE", new Acao("reduzir", 35)));
+        estado86.acoes.add(new AcaoSintatica("$", new Acao("reduzir", 35)));
+        tabela.estados.add(estado86);
+
+        EstadoSintatico estado87 = new EstadoSintatico();
+        estado87.acoes.add(new AcaoSintatica("ABRE_CHAVE", new Acao("empilhar", 25)));
+        estado87.transicoes.add(new Transicao("BK", 94));
+        tabela.estados.add(estado87);
+
+        EstadoSintatico estado88 = new EstadoSintatico();
+        estado88.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("empilhar", 95)));
+        estado88.acoes.add(new AcaoSintatica("OP_REL", new Acao("empilhar", 59)));
+        estado88.acoes.add(new AcaoSintatica("OP_LO", new Acao("empilhar", 60)));
+        tabela.estados.add(estado88);
+
+        EstadoSintatico estado89 = new EstadoSintatico();
+        estado89.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("empilhar", 96)));
+        estado89.acoes.add(new AcaoSintatica("OP_REL", new Acao("empilhar", 59)));
+        estado89.acoes.add(new AcaoSintatica("OP_LO", new Acao("empilhar", 60)));
+        tabela.estados.add(estado89);
+
+        EstadoSintatico estado90 = new EstadoSintatico();
+        estado90.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 21)));
+        estado90.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 21)));
+        estado90.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 21)));
+        tabela.estados.add(estado90);
+
+        EstadoSintatico estado91 = new EstadoSintatico();
+        estado91.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 23)));
+        estado91.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 23)));
+        estado91.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 23)));
+        tabela.estados.add(estado91);
+
+        EstadoSintatico estado92 = new EstadoSintatico();
+        estado92.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 25)));
+        estado92.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 25)));
+        estado92.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 25)));
+        tabela.estados.add(estado92);
+
+        EstadoSintatico estado93 = new EstadoSintatico();
+        estado93.acoes.add(new AcaoSintatica("PONTO_VIRGULA", new Acao("empilhar", 97)));
+        tabela.estados.add(estado93);
+
+        EstadoSintatico estado94 = new EstadoSintatico();
+        estado94.acoes.add(new AcaoSintatica("TIPO", new Acao("reduzir", 19)));
+        estado94.acoes.add(new AcaoSintatica("ID", new Acao("reduzir", 19)));
+        estado94.acoes.add(new AcaoSintatica("IF", new Acao("reduzir", 19)));
+        estado94.acoes.add(new AcaoSintatica("ELSE", new Acao("reduzir", 19)));
+        estado94.acoes.add(new AcaoSintatica("FECHA_CHAVE", new Acao("reduzir", 19)));
+        estado94.acoes.add(new AcaoSintatica("WHILE", new Acao("reduzir", 19)));
+        estado94.acoes.add(new AcaoSintatica("DO", new Acao("reduzir", 19)));
+        estado94.acoes.add(new AcaoSintatica("READ", new Acao("reduzir", 19)));
+        estado94.acoes.add(new AcaoSintatica("WRITE", new Acao("reduzir", 19)));
+        estado94.acoes.add(new AcaoSintatica("$", new Acao("reduzir", 19)));
+        tabela.estados.add(estado94);
+
+        EstadoSintatico estado95 = new EstadoSintatico();
+        estado95.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 31)));
+        estado95.acoes.add(new AcaoSintatica("FECHA_NOT", new Acao("reduzir", 31)));
+        estado95.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 31)));
+        estado95.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 31)));
+        tabela.estados.add(estado95);
+
+        EstadoSintatico estado96 = new EstadoSintatico();
+        estado96.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 32)));
+        estado96.acoes.add(new AcaoSintatica("FECHA_NOT", new Acao("reduzir", 32)));
+        estado96.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 32)));
+        estado96.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 32)));
+        tabela.estados.add(estado96);
+
+        EstadoSintatico estado97 = new EstadoSintatico();
+        estado97.acoes.add(new AcaoSintatica("TIPO", new Acao("reduzir", 28)));
+        estado97.acoes.add(new AcaoSintatica("ID", new Acao("reduzir", 28)));
+        estado97.acoes.add(new AcaoSintatica("IF", new Acao("reduzir", 28)));
+        estado97.acoes.add(new AcaoSintatica("ELSE", new Acao("reduzir", 28)));
+        estado97.acoes.add(new AcaoSintatica("FECHA_CHAVE", new Acao("reduzir", 28)));
+        estado97.acoes.add(new AcaoSintatica("WHILE", new Acao("reduzir", 28)));
+        estado97.acoes.add(new AcaoSintatica("DO", new Acao("reduzir", 28)));
+        estado97.acoes.add(new AcaoSintatica("READ", new Acao("reduzir", 28)));
+        estado97.acoes.add(new AcaoSintatica("WRITE", new Acao("reduzir", 28)));
+        estado97.acoes.add(new AcaoSintatica("$", new Acao("reduzir", 28)));
+        tabela.estados.add(estado97);
+
     }
 
     public static void gerarReducoes(Tabela tabela) {
+        Reducao reducao0 = new Reducao("EXPR");
+        reducao0.transformacoes.add("DV");
+        tabela.reducoes.add(reducao0);
 
+        Reducao reducao1 = new Reducao("EXPR");
+        reducao1.transformacoes.add("DV");
+        reducao1.transformacoes.add("EXPR");
+        tabela.reducoes.add(reducao1);
+
+        Reducao reducao2 = new Reducao("EXPR");
+        reducao2.transformacoes.add("ASS");
+        tabela.reducoes.add(reducao2);
     }
 }
