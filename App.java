@@ -6,8 +6,8 @@ class App {
 
     try {
       List<Token> tokens = AnalisadorLexico.Tokenize(conteudoArquivo);
-      imprimeTokens(tokens);
-      // boolean programaEhValido = AnalisadorSintatico.programaEhValido(tokens);
+      // imprimeTokens(tokens);
+      boolean programaEhValido = AnalisadorSintatico.programaEhValido(tokens);
 
     } catch (TokenInvalidoException e) {
       System.out.println("Ei programador, voce tem certeza que esta programando na linguagem correta?");

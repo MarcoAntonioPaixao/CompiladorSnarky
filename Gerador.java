@@ -325,14 +325,14 @@ public class Gerador {
 
         EstadoSintatico estado38 = new EstadoSintatico();
         estado38.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("empilhar", 58)));
-        estado38.acoes.add(new AcaoSintatica("OP_REL", new Acao("empilhar", 59)));
-        estado38.acoes.add(new AcaoSintatica("OP_LO", new Acao("empilhar", 60)));
+        estado38.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("empilhar", 59)));
+        estado38.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("empilhar", 60)));
         tabela.estados.add(estado38);
 
         EstadoSintatico estado39 = new EstadoSintatico();
         estado39.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 20)));
-        estado39.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 20)));
-        estado39.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 20)));
+        estado39.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("reduzir", 20)));
+        estado39.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("reduzir", 20)));
         tabela.estados.add(estado39);
 
         EstadoSintatico estado40 = new EstadoSintatico();
@@ -341,34 +341,34 @@ public class Gerador {
 
         EstadoSintatico estado41 = new EstadoSintatico();
         estado41.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 22)));
-        estado41.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 22)));
-        estado41.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 22)));
+        estado41.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("reduzir", 22)));
+        estado41.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("reduzir", 22)));
         tabela.estados.add(estado41);
 
         EstadoSintatico estado42 = new EstadoSintatico();
         estado42.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 24)));
-        estado42.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 24)));
-        estado42.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 24)));
+        estado42.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("reduzir", 24)));
+        estado42.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("reduzir", 24)));
         tabela.estados.add(estado42);
 
         EstadoSintatico estado43 = new EstadoSintatico();
         estado43.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 29)));
         estado43.acoes.add(new AcaoSintatica("FECHA_NOT", new Acao("reduzir", 29)));
-        estado43.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 29)));
-        estado43.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 29)));
+        estado43.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("reduzir", 29)));
+        estado43.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("reduzir", 29)));
         tabela.estados.add(estado43);
 
         EstadoSintatico estado44 = new EstadoSintatico();
         estado44.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 30)));
         estado44.acoes.add(new AcaoSintatica("FECHA_NOT", new Acao("reduzir", 30)));
-        estado44.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 30)));
-        estado44.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 30)));
+        estado44.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("reduzir", 30)));
+        estado44.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("reduzir", 30)));
         tabela.estados.add(estado44);
 
         EstadoSintatico estado45 = new EstadoSintatico();
         estado45.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("empilha", 62)));
-        estado45.acoes.add(new AcaoSintatica("OP_REL", new Acao("empilha", 59)));
-        estado45.acoes.add(new AcaoSintatica("OP_LO", new Acao("empilha", 60)));
+        estado45.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("empilha", 59)));
+        estado45.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("empilha", 60)));
         tabela.estados.add(estado45);
 
         EstadoSintatico estado46 = new EstadoSintatico();
@@ -601,27 +601,27 @@ public class Gerador {
         EstadoSintatico estado78 = new EstadoSintatico();
         estado78.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 20)));
         estado78.acoes.add(new AcaoSintatica("FECHA_NOT", new Acao("empilhar", 90)));
-        estado78.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 20)));
-        estado78.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 20)));
+        estado78.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("reduzir", 20)));
+        estado78.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("reduzir", 20)));
         tabela.estados.add(estado78);
 
         EstadoSintatico estado79 = new EstadoSintatico();
         estado79.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 22)));
         estado79.acoes.add(new AcaoSintatica("FECHA_NOT", new Acao("empilhar", 91)));
-        estado79.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 22)));
-        estado79.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 22)));
+        estado79.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("reduzir", 22)));
+        estado79.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("reduzir", 22)));
         tabela.estados.add(estado79);
 
         EstadoSintatico estado80 = new EstadoSintatico();
         estado80.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 24)));
         estado80.acoes.add(new AcaoSintatica("FECHA_NOT", new Acao("empilhar", 92)));
-        estado80.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 24)));
-        estado80.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 24)));
+        estado80.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("reduzir", 24)));
+        estado80.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("reduzir", 24)));
         tabela.estados.add(estado80);
 
         EstadoSintatico estado81 = new EstadoSintatico();
-        estado81.acoes.add(new AcaoSintatica("OP_REL", new Acao("empilhar", 59)));
-        estado81.acoes.add(new AcaoSintatica("OP_LO", new Acao("empilhar", 60)));
+        estado81.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("empilhar", 59)));
+        estado81.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("empilhar", 60)));
         tabela.estados.add(estado81);
 
         EstadoSintatico estado82 = new EstadoSintatico();
@@ -639,8 +639,8 @@ public class Gerador {
 
         EstadoSintatico estado83 = new EstadoSintatico();
         estado83.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("empilhar", 93)));
-        estado83.acoes.add(new AcaoSintatica("OP_REL", new Acao("empilhar", 59)));
-        estado83.acoes.add(new AcaoSintatica("OP_LO", new Acao("empilhar", 60)));
+        estado83.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("empilhar", 59)));
+        estado83.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("empilhar", 60)));
         tabela.estados.add(estado83);
 
         EstadoSintatico estado84 = new EstadoSintatico();
@@ -689,32 +689,32 @@ public class Gerador {
 
         EstadoSintatico estado88 = new EstadoSintatico();
         estado88.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("empilhar", 95)));
-        estado88.acoes.add(new AcaoSintatica("OP_REL", new Acao("empilhar", 59)));
-        estado88.acoes.add(new AcaoSintatica("OP_LO", new Acao("empilhar", 60)));
+        estado88.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("empilhar", 59)));
+        estado88.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("empilhar", 60)));
         tabela.estados.add(estado88);
 
         EstadoSintatico estado89 = new EstadoSintatico();
         estado89.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("empilhar", 96)));
-        estado89.acoes.add(new AcaoSintatica("OP_REL", new Acao("empilhar", 59)));
-        estado89.acoes.add(new AcaoSintatica("OP_LO", new Acao("empilhar", 60)));
+        estado89.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("empilhar", 59)));
+        estado89.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("empilhar", 60)));
         tabela.estados.add(estado89);
 
         EstadoSintatico estado90 = new EstadoSintatico();
         estado90.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 21)));
-        estado90.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 21)));
-        estado90.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 21)));
+        estado90.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("reduzir", 21)));
+        estado90.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("reduzir", 21)));
         tabela.estados.add(estado90);
 
         EstadoSintatico estado91 = new EstadoSintatico();
         estado91.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 23)));
-        estado91.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 23)));
-        estado91.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 23)));
+        estado91.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("reduzir", 23)));
+        estado91.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("reduzir", 23)));
         tabela.estados.add(estado91);
 
         EstadoSintatico estado92 = new EstadoSintatico();
         estado92.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 25)));
-        estado92.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 25)));
-        estado92.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 25)));
+        estado92.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("reduzir", 25)));
+        estado92.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("reduzir", 25)));
         tabela.estados.add(estado92);
 
         EstadoSintatico estado93 = new EstadoSintatico();
@@ -737,15 +737,15 @@ public class Gerador {
         EstadoSintatico estado95 = new EstadoSintatico();
         estado95.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 31)));
         estado95.acoes.add(new AcaoSintatica("FECHA_NOT", new Acao("reduzir", 31)));
-        estado95.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 31)));
-        estado95.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 31)));
+        estado95.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("reduzir", 31)));
+        estado95.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("reduzir", 31)));
         tabela.estados.add(estado95);
 
         EstadoSintatico estado96 = new EstadoSintatico();
         estado96.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 32)));
         estado96.acoes.add(new AcaoSintatica("FECHA_NOT", new Acao("reduzir", 32)));
-        estado96.acoes.add(new AcaoSintatica("OP_REL", new Acao("reduzir", 32)));
-        estado96.acoes.add(new AcaoSintatica("OP_LO", new Acao("reduzir", 32)));
+        estado96.acoes.add(new AcaoSintatica("SIGN_REL", new Acao("reduzir", 32)));
+        estado96.acoes.add(new AcaoSintatica("SIGN_LO", new Acao("reduzir", 32)));
         tabela.estados.add(estado96);
 
         EstadoSintatico estado97 = new EstadoSintatico();
@@ -764,17 +764,257 @@ public class Gerador {
     }
 
     public static void gerarReducoes(Tabela tabela) {
-        Reducao reducao0 = new Reducao("EXPR");
-        reducao0.transformacoes.add("DV");
+        Reducao reducao0 = new Reducao("S");
+        reducao0.transformacoes.add("EXPR");
         tabela.reducoes.add(reducao0);
 
         Reducao reducao1 = new Reducao("EXPR");
         reducao1.transformacoes.add("DV");
-        reducao1.transformacoes.add("EXPR");
         tabela.reducoes.add(reducao1);
 
         Reducao reducao2 = new Reducao("EXPR");
-        reducao2.transformacoes.add("ASS");
+        reducao2.transformacoes.add("DV");
+        reducao2.transformacoes.add("EXPR");
         tabela.reducoes.add(reducao2);
+
+        Reducao reducao3 = new Reducao("EXPR");
+        reducao3.transformacoes.add("ASS");
+        tabela.reducoes.add(reducao3);
+
+        Reducao reducao4 = new Reducao("EXPR");
+        reducao4.transformacoes.add("ASS");
+        reducao4.transformacoes.add("EXPR");
+        tabela.reducoes.add(reducao4);
+
+        Reducao reducao5 = new Reducao("EXPR");
+        reducao5.transformacoes.add("DE");
+        tabela.reducoes.add(reducao5);
+
+        Reducao reducao6 = new Reducao("EXPR");
+        reducao6.transformacoes.add("DE");
+        reducao6.transformacoes.add("EXPR");
+        tabela.reducoes.add(reducao6);
+
+        Reducao reducao7 = new Reducao("EXPR");
+        reducao7.transformacoes.add("ER");
+        tabela.reducoes.add(reducao7);
+
+        Reducao reducao8 = new Reducao("EXPR");
+        reducao8.transformacoes.add("ER");
+        reducao8.transformacoes.add("EXPR");
+        tabela.reducoes.add(reducao8);
+
+        Reducao reducao9 = new Reducao("EXPR");
+        reducao9.transformacoes.add("PROC");
+        tabela.reducoes.add(reducao9);
+
+        Reducao reducao10 = new Reducao("EXPR");
+        reducao10.transformacoes.add("PROC");
+        reducao10.transformacoes.add("EXPR");
+        tabela.reducoes.add(reducao10);
+
+        Reducao reducao11 = new Reducao("DV");
+        reducao11.transformacoes.add("TIPO");
+        reducao11.transformacoes.add("ID");
+        reducao11.transformacoes.add("EV");
+        tabela.reducoes.add(reducao11);
+
+        Reducao reducao12 = new Reducao("EV");
+        reducao12.transformacoes.add("ATRIBUICAO");
+        reducao12.transformacoes.add("VALOR");
+        reducao12.transformacoes.add("PONTO_VIRGULA");
+        tabela.reducoes.add(reducao12);
+
+        Reducao reducao13 = new Reducao("EV");
+        reducao13.transformacoes.add("ATRIBUICAO");
+        reducao13.transformacoes.add("VALOR_BOOLEANO");
+        reducao13.transformacoes.add("PONTO_VIRGULA");
+        tabela.reducoes.add(reducao13);
+
+        Reducao reducao14 = new Reducao("EV");
+        reducao14.transformacoes.add("PONTO_VIRGULA");
+        tabela.reducoes.add(reducao14);
+
+        Reducao reducao15 = new Reducao("ATR");
+        reducao15.transformacoes.add("ATRIBUICAO");
+        reducao15.transformacoes.add("VALOR");
+        tabela.reducoes.add(reducao15);
+
+        Reducao reducao16 = new Reducao("ATR");
+        reducao16.transformacoes.add("ATRIBUICAO");
+        reducao16.transformacoes.add("OP_AR");
+        tabela.reducoes.add(reducao16);
+
+        Reducao reducao17 = new Reducao("ASS");
+        reducao17.transformacoes.add("ID");
+        reducao17.transformacoes.add("ATR");
+        reducao17.transformacoes.add("PONTO_VIRGULA");
+        tabela.reducoes.add(reducao17);
+
+        Reducao reducao18 = new Reducao("DE");
+        reducao18.transformacoes.add("IF");
+        reducao18.transformacoes.add("ABRE_PARENTESE");
+        reducao18.transformacoes.add("BOOL_S");
+        reducao18.transformacoes.add("FECHA_PARENTESE");
+        reducao18.transformacoes.add("BK");
+        tabela.reducoes.add(reducao18);
+
+        Reducao reducao19 = new Reducao("DE");
+        reducao19.transformacoes.add("IF");
+        reducao19.transformacoes.add("ABRE_PARENTESE");
+        reducao19.transformacoes.add("BOOL_S");
+        reducao19.transformacoes.add("FECHA_PARENTESE");
+        reducao19.transformacoes.add("BK");
+        reducao19.transformacoes.add("ELSE");
+        reducao19.transformacoes.add("BK");
+        tabela.reducoes.add(reducao19);
+
+        Reducao reducao20 = new Reducao("BOOL_S");
+        reducao20.transformacoes.add("VALOR_BOOLEANO");
+        tabela.reducoes.add(reducao20);
+
+        Reducao reducao21 = new Reducao("BOOL_S");
+        reducao21.transformacoes.add("NOT");
+        reducao21.transformacoes.add("ABRE_NOT");
+        reducao21.transformacoes.add("VALOR_BOOLEANO");
+        reducao21.transformacoes.add("FECHA_NOT");
+        tabela.reducoes.add(reducao21);
+
+        Reducao reducao22 = new Reducao("BOOL_S");
+        reducao22.transformacoes.add("OP");
+        tabela.reducoes.add(reducao22);
+
+        Reducao reducao23 = new Reducao("BOOL_S");
+        reducao23.transformacoes.add("NOT");
+        reducao23.transformacoes.add("ABRE_NOT");
+        reducao23.transformacoes.add("OP");
+        reducao23.transformacoes.add("FECHA_NOT");
+        tabela.reducoes.add(reducao23);
+
+        Reducao reducao24 = new Reducao("BOOL_S");
+        reducao24.transformacoes.add("ID");
+        tabela.reducoes.add(reducao24);
+
+        Reducao reducao25 = new Reducao("BOOL_S");
+        reducao25.transformacoes.add("NOT");
+        reducao25.transformacoes.add("ABRE_NOT");
+        reducao25.transformacoes.add("ID");
+        reducao25.transformacoes.add("FECHA_NOT");
+        tabela.reducoes.add(reducao25);
+
+        Reducao reducao26 = new Reducao("BK");
+        reducao26.transformacoes.add("ABRE_CHAVE");
+        reducao26.transformacoes.add("EXPR");
+        reducao26.transformacoes.add("FECHA_CHAVE");
+        tabela.reducoes.add(reducao26);
+
+        Reducao reducao27 = new Reducao("ER");
+        reducao27.transformacoes.add("WHILE");
+        reducao27.transformacoes.add("ABRE_PARENTESE");
+        reducao27.transformacoes.add("BOOL_S");
+        reducao27.transformacoes.add("FECHA_PARENTESE");
+        reducao27.transformacoes.add("BK");
+        tabela.reducoes.add(reducao27);
+
+        Reducao reducao28 = new Reducao("ER");
+        reducao28.transformacoes.add("DO");
+        reducao28.transformacoes.add("BK");
+        reducao28.transformacoes.add("WHILE");
+        reducao28.transformacoes.add("ABRE_PARENTESE");
+        reducao28.transformacoes.add("BOOL_S");
+        reducao28.transformacoes.add("FECHA_PARENTESE");
+        reducao28.transformacoes.add("PONTO_VIRGULA");
+        tabela.reducoes.add(reducao28);
+
+        Reducao reducao29 = new Reducao("OP");
+        reducao29.transformacoes.add("OP_REL");
+        tabela.reducoes.add(reducao29);
+
+        Reducao reducao30 = new Reducao("OP");
+        reducao30.transformacoes.add("OP_LO");
+        tabela.reducoes.add(reducao30);
+
+        Reducao reducao31 = new Reducao("OP_REL");
+        reducao31.transformacoes.add("BOOL_S");
+        reducao31.transformacoes.add("SIGNL_REL");
+        reducao31.transformacoes.add("ABRE_PARENTESE");
+        reducao31.transformacoes.add("BOOL_S");
+        reducao31.transformacoes.add("FECHA_PARENTESE");
+        tabela.reducoes.add(reducao31);
+
+        Reducao reducao32 = new Reducao("OP_REL");
+        reducao32.transformacoes.add("BOOL_S");
+        reducao32.transformacoes.add("SIGNL_LO");
+        reducao32.transformacoes.add("ABRE_PARENTESE");
+        reducao32.transformacoes.add("BOOL_S");
+        reducao32.transformacoes.add("FECHA_PARENTESE");
+        tabela.reducoes.add(reducao32);
+
+        Reducao reducao33 = new Reducao("PROC");
+        reducao33.transformacoes.add("READ");
+        reducao33.transformacoes.add("ABRE_PARENTESE");
+        reducao33.transformacoes.add("ID");
+        reducao33.transformacoes.add("FECHA_PARENTESE");
+        reducao33.transformacoes.add("PONTO_VIRGULA");
+        tabela.reducoes.add(reducao33);
+
+        Reducao reducao34 = new Reducao("PROC");
+        reducao34.transformacoes.add("WRITE");
+        reducao34.transformacoes.add("ABRE_PARENTESE");
+        reducao34.transformacoes.add("ID");
+        reducao34.transformacoes.add("FECHA_PARENTESE");
+        reducao34.transformacoes.add("PONTO_VIRGULA");
+        tabela.reducoes.add(reducao34);
+
+        Reducao reducao35 = new Reducao("PROC");
+        reducao35.transformacoes.add("WRITE");
+        reducao35.transformacoes.add("ABRE_PARENTESE");
+        reducao35.transformacoes.add("VALOR");
+        reducao35.transformacoes.add("FECHA_PARENTESE");
+        reducao35.transformacoes.add("PONTO_VIRGULA");
+        tabela.reducoes.add(reducao35);
+
+        Reducao reducao36 = new Reducao("OP_AR");
+        reducao36.transformacoes.add("OP_AR");
+        reducao36.transformacoes.add("MAIS");
+        reducao36.transformacoes.add("MID");
+        tabela.reducoes.add(reducao36);
+
+        Reducao reducao37 = new Reducao("OP_AR");
+        reducao37.transformacoes.add("OP_AR");
+        reducao37.transformacoes.add("MENOS");
+        reducao37.transformacoes.add("MID");
+        tabela.reducoes.add(reducao37);
+
+        Reducao reducao38 = new Reducao("OP_AR");
+        reducao38.transformacoes.add("MID");
+        tabela.reducoes.add(reducao38);
+
+        Reducao reducao39 = new Reducao("MID");
+        reducao39.transformacoes.add("MID");
+        reducao39.transformacoes.add("VEZES");
+        reducao39.transformacoes.add("INF");
+        tabela.reducoes.add(reducao39);
+
+        Reducao reducao40 = new Reducao("MID");
+        reducao40.transformacoes.add("MID");
+        reducao40.transformacoes.add("DIVIDIR");
+        reducao40.transformacoes.add("INF");
+        tabela.reducoes.add(reducao40);
+
+        Reducao reducao41 = new Reducao("MID");
+        reducao41.transformacoes.add("INF");
+        tabela.reducoes.add(reducao41);
+
+        Reducao reducao42 = new Reducao("INF");
+        reducao42.transformacoes.add("ABRE_PARENTESE");
+        reducao42.transformacoes.add("OP_AR");
+        reducao42.transformacoes.add("FECHA_PARENTESE");
+        tabela.reducoes.add(reducao42);
+
+        Reducao reducao43 = new Reducao("INF");
+        reducao43.transformacoes.add("ID");
+        tabela.reducoes.add(reducao43);
+
     }
 }
