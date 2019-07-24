@@ -39,12 +39,22 @@ class Token {
     }
 
     if (ehPalavraReservada(conteudoToken)) {
-      if (ehProc(conteudoToken))
-        return new Token(conteudoToken, "PROC");
-      else if (ehTipo(conteudoToken))
+      if (ehProc(conteudoToken)) {
+        if (conteudoToken.equals("read"))
+          return new Token(conteudoToken, "READ");
+        else
+          return new Token(conteudoToken, "WRITE");
+      } else if (ehTipo(conteudoToken)) {
         return new Token(conteudoToken, "TIPO");
-      else
-        return new Token(conteudoToken, "RESERVADA");
+      } else if (conteudoToken.equals("while")) {
+        return new Token(conteudoToken, "WHILE");
+      } else if (conteudoToken.equals("do")) {
+        return new Token(conteudoToken, "DO");
+      } else if (conteudoToken.equals("if")) {
+        return new Token(conteudoToken, "IF");
+      } else {
+        return new Token(conteudoToken, "ELSE");
+      }
     } else if (ehValorBooleano(conteudoToken)) {
       return new Token(conteudoToken, "VALOR_BOOLEANO");
     } else {
