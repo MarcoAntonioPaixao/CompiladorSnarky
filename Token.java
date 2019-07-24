@@ -1,6 +1,7 @@
 class Token {
   String conteudo;
   String tipoToken;
+  int numLinha;
 
   public Token(String conteudo, String tipoToken) {
     this.conteudo = conteudo;

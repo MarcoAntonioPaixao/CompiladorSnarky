@@ -17,6 +17,7 @@ class AnalisadorLexico {
           // System.out.println("Adicionei id ou palavra reservada");
           Token idToken = Token.retornaIdentificador(conteudoArquivo, i);
           i += idToken.conteudo.length() - 1;
+          idToken.numLinha = numeroLinha;
           tokens.add(idToken);
 
         } else if (ehNumero(conteudoArquivo.charAt(i))) {
@@ -25,6 +26,7 @@ class AnalisadorLexico {
           try {
             Token numeroToken = Token.retornaNumero(conteudoArquivo, i);
             i += numeroToken.conteudo.length() - 1;
+            numeroToken.numLinha = numeroLinha;
             tokens.add(numeroToken);
           } catch (NumeroInvalidoException e) {
             System.out.println("Erro na linha " + numeroLinha);
@@ -36,6 +38,7 @@ class AnalisadorLexico {
             // System.out.println("Adicionei operador logico");
             Token opToken = Token.retornaOpLogico(conteudoArquivo, i);
             i += opToken.conteudo.length() - 1;
+            opToken.numLinha = numeroLinha;
             tokens.add(opToken);
           } catch (OpLogicoInvalidoException e) {
             System.out.println("Erro na linha " + numeroLinha);
@@ -47,6 +50,7 @@ class AnalisadorLexico {
             // System.out.println("Adicionei operador relacional");
             Token opToken = Token.retornaOpRelacional(conteudoArquivo, i);
             i += opToken.conteudo.length() - 1;
+            opToken.numLinha = numeroLinha;
             tokens.add(opToken);
           } catch (OpLogicoInvalidoException e) {
             System.out.println("Erro na linha " + numeroLinha);
@@ -58,6 +62,7 @@ class AnalisadorLexico {
           // System.out.println("Adicionei tipo de token extra");
           Token token = Token.identificaTipoToken(conteudoArquivo.charAt(i));
           i += token.conteudo.length() - 1;
+          token.numLinha = numeroLinha;
           tokens.add(token);
 
         } else {
