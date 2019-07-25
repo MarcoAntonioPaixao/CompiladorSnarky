@@ -1,0 +1,16 @@
+//cria a pilha e insere 0 (estado) nela
+
+        ////começar loop
+
+        //checar na tabela no estado apontado pelo topo da pilha pelo token na ponta da lista
+            //se não encontrar
+                //erro
+            //se encontrar
+                //se o token for $ e for acc
+                    //termina e aceita o programa como válido.
+                //se for empilhar
+                    //empilhar o terminal(token) e o estado detalhado na ação na pilha
+                //se for reduzir
+                    //remover da pilha duas vezes a quantia de transformações na regra gramática definida.
+                    //usar o novo estado no topo da pilha para junto ao não-terminal da regra gramática ->
+                    //definir a transição escolhida. Inserir na pilha o não-terminal e a transição.

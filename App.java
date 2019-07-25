@@ -9,6 +9,8 @@ class App {
       // imprimeTokens(tokens);
       boolean programaEhValido = AnalisadorSintatico.programaEhValido(tokens);
 
+      System.out.println("Programa eh validio? " + programaEhValido);
+
     } catch (TokenInvalidoException e) {
       System.out.println("Ei programador, voce tem certeza que esta programando na linguagem correta?");
       e.printStackTrace();
@@ -17,6 +19,9 @@ class App {
       e.printStackTrace();
     } catch (OpLogicoInvalidoException e) {
       System.out.println("Isso não é lógico!!!.");
+      e.printStackTrace();
+    } catch (Exception e) {
+      System.out.println("Erro sintático.");
       e.printStackTrace();
     }
 
