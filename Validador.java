@@ -21,14 +21,24 @@ public class Validador {
       while (tokens.size() > 0) {
         estadoTopoPilha = pilha.peek();
         Token tokenSendoAvaliado = tokens.get(0);
+        if (tokens.size() < 79 && tokens.size() > 60) {
+          System.out.println("Estado no topo da pilha: " + estadoTopoPilha);
+          System.err.println("Token sendo avaliado: " + tokenSendoAvaliado.conteudo);
+        }
         EstadoSintatico estadoSendoAvaliado = tabela.estados.get(Integer.parseInt(estadoTopoPilha));
-
+        // System.out.println("Token " + tokenSendoAvaliado.tipoToken + " conteudo " +
+        // tokenSendoAvaliado.conteudo);
+        // System.out.println("Contador: " + tokens.size());
         int indexAcao = terminalExisteNoEstado(tokenSendoAvaliado.tipoToken, estadoSendoAvaliado);
 
         if (indexAcao == -1) {
           // deal with sintatic error here
           errosSintaticos.add(new ErroSintaticoException("Erro Sintatico ao analisar " + tokenSendoAvaliado.conteudo
-              + " presente na linha " + tokenSendoAvaliado.numLinha));
+              + " presente na linha " + tokenSendoAvaliado.numLinha + "\nestado no topo da pilha: " + estadoTopoPilha));
+          System.out.println("Panic!");
+          // System.out.println("Erro Sintatico ao analisar " +
+          // tokenSendoAvaliado.conteudo + " presente na linha "
+          // + tokenSendoAvaliado.numLinha);
           PanicMode(tokens, estadoSendoAvaliado);
         } else {
           if (ehFinalValido(tokenSendoAvaliado, estadoSendoAvaliado, indexAcao)) {
@@ -39,8 +49,9 @@ public class Validador {
               pilha.push(tokenSendoAvaliado.tipoToken);
               pilha.push(String.valueOf(estadoSendoAvaliado.acoes.get(indexAcao).acao.numEstado));
               tokens.remove(0);
-            } else {
+            } else if (estadoSendoAvaliado.acoes.get(indexAcao).acao.tipo.equals("reduzir")) {
               // segue a lógica de reduzir
+              // index acao 0 me retorna um indexReducao de 69 o que é impossível
               int indexReducao = estadoSendoAvaliado.acoes.get(indexAcao).acao.numEstado;
               int numTokensDescartar = tabela.reducoes.get(indexReducao).transformacoes.size() * 2;
 
@@ -55,6 +66,12 @@ public class Validador {
               pilha.push(naoTerminalEscolhido);
               pilha.push(estadoApontadoPelaTransicao);
               // verificar se tem de remover o token da lista, acho que nao
+            } else if (estadoSendoAvaliado.acoes.get(indexAcao).acao.tipo.equals("acc")) {
+              // aqui só se deve entrar quando o panic mode for acionado.
+              break;
+            } else {
+              System.out.println("Tipo de ação inválida, esperava empilhar ou reduzir, obtive "
+                  + estadoSendoAvaliado.acoes.get(indexAcao).acao.tipo + ".");
             }
           }
         }
@@ -69,6 +86,10 @@ public class Validador {
   }
 
   private static int terminalExisteNoEstado(String terminal, EstadoSintatico estado) {
+    // System.out.println("Check " + terminal + " " + estado.acoes.size());
+    // if (terminal.equals("MAIS")) {
+    // System.out.println("Check " + terminal + estado.acoes.size());
+    // }
     for (int i = 0; i < estado.acoes.size(); i++) {
       AcaoSintatica acaoAtual = estado.acoes.get(i);
       // terminal pode ser, por exemplo, ABRE_CHAVE
@@ -76,6 +97,8 @@ public class Validador {
         return i;
       }
     }
+
+    // System.out.println("Check " + terminal + estado.acoes.get(1).terminal);
 
     return -1;
   }

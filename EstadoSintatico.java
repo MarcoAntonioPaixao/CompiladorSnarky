@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * EstadoSintatico
+ * EstadoSintatico é o estado da tabela SLR com ações e transições
  */
 public class EstadoSintatico {
     public List<AcaoSintatica> acoes;

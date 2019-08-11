@@ -82,9 +82,11 @@ class Token {
     }
 
     if (flagNumeroReal) {
-      return new Token(conteudoToken, "VALOR_REAL");
+      // VALOR_REAL
+      return new Token(conteudoToken, "VALOR");
     } else {
-      return new Token(conteudoToken, "VALOR_INTEIRO");
+      // VALOR_INTEIRO
+      return new Token(conteudoToken, "VALOR");
     }
 
   }
