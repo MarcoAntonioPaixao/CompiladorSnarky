@@ -9,7 +9,7 @@ class App {
       // imprimeTokens(tokens);
       boolean programaEhValido = AnalisadorSintatico.programaEhValido(tokens);
 
-      System.out.println("Programa eh validio? " + programaEhValido);
+      System.out.println("Programa eh valido? " + programaEhValido);
 
     } catch (TokenInvalidoException e) {
       System.out.println("Ei programador, voce tem certeza que esta programando na linguagem correta?");

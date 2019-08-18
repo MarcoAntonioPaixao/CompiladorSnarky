@@ -26,7 +26,18 @@ class Token {
     else if (conteudo == ';')
       tipo = "PONTO_VIRGULA";
     else if (ehOpAritmetico(conteudo))
-      tipo = "OP_ARITMETICO";
+      tipo = "OP_AR";
+
+    if (tipo.equals("OP_AR")) {
+      if (conteudo == '+')
+        return new Token("MAIS", tipo);
+      if (conteudo == '-')
+        return new Token("MENOS", tipo);
+      if (conteudo == '*')
+        return new Token("VEZES", tipo);
+      if (conteudo == '/')
+        return new Token("DIVIDIR", tipo);
+    }
 
     return new Token(Character.toString(conteudo), tipo);
   }
@@ -107,7 +118,7 @@ class Token {
     if (conteudoArquivo.charAt(indiceAtual) == '!')
       return new Token(conteudoToken, "NOT");
     else
-      return new Token(conteudoToken, "OP_LOGICO");
+      return new Token(conteudoToken, "SIGN_LO");
 
   }
 
@@ -130,7 +141,7 @@ class Token {
       else
         throw new OpLogicoInvalidoException("O operador relacional " + conteudoArquivo.charAt(indiceAtual)
             + conteudoArquivo.charAt(indiceAtual + 1) + " nao eh um operador valido.");
-      return new Token(conteudoToken, "OP_RELACIONAL");
+      return new Token(conteudoToken, "SIGN_REL");
     }
 
   }

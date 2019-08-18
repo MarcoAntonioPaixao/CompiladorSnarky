@@ -21,24 +21,23 @@ public class Validador {
       while (tokens.size() > 0) {
         estadoTopoPilha = pilha.peek();
         Token tokenSendoAvaliado = tokens.get(0);
-        if (tokens.size() < 79 && tokens.size() > 60) {
-          System.out.println("Estado no topo da pilha: " + estadoTopoPilha);
-          System.err.println("Token sendo avaliado: " + tokenSendoAvaliado.conteudo);
-        }
+        // if (tokens.size() < 79 && tokens.size() > 60) {
+        System.out.println("Estado no topo da pilha: " + estadoTopoPilha);
+        System.err.println("Token sendo avaliado: " + tokenSendoAvaliado.conteudo);
+        // }
         EstadoSintatico estadoSendoAvaliado = tabela.estados.get(Integer.parseInt(estadoTopoPilha));
         // System.out.println("Token " + tokenSendoAvaliado.tipoToken + " conteudo " +
         // tokenSendoAvaliado.conteudo);
         // System.out.println("Contador: " + tokens.size());
-        int indexAcao = terminalExisteNoEstado(tokenSendoAvaliado.tipoToken, estadoSendoAvaliado);
+        int indexAcao = terminalExisteNoEstado(tokenSendoAvaliado, estadoSendoAvaliado);
 
         if (indexAcao == -1) {
           // deal with sintatic error here
           errosSintaticos.add(new ErroSintaticoException("Erro Sintatico ao analisar " + tokenSendoAvaliado.conteudo
               + " presente na linha " + tokenSendoAvaliado.numLinha + "\nestado no topo da pilha: " + estadoTopoPilha));
           System.out.println("Panic!");
-          // System.out.println("Erro Sintatico ao analisar " +
-          // tokenSendoAvaliado.conteudo + " presente na linha "
-          // + tokenSendoAvaliado.numLinha);
+          System.out.println("Erro Sintatico ao analisar " + tokenSendoAvaliado.tipoToken + " presente na linha "
+              + tokenSendoAvaliado.numLinha);
           PanicMode(tokens, estadoSendoAvaliado);
         } else {
           if (ehFinalValido(tokenSendoAvaliado, estadoSendoAvaliado, indexAcao)) {
@@ -85,15 +84,18 @@ public class Validador {
     return errosSintaticos;
   }
 
-  private static int terminalExisteNoEstado(String terminal, EstadoSintatico estado) {
+  private static int terminalExisteNoEstado(Token terminal, EstadoSintatico estado) {
     // System.out.println("Check " + terminal + " " + estado.acoes.size());
-    // if (terminal.equals("MAIS")) {
-    // System.out.println("Check " + terminal + estado.acoes.size());
-    // }
+    if (terminal.tipoToken.equals("IF")) {
+      System.out.println("Check " + terminal.tipoToken + " " + estado.acoes.size());
+      for (int i = 0; i < estado.acoes.size(); i++) {
+        System.out.println(estado.acoes.get(i).terminal);
+      }
+    }
     for (int i = 0; i < estado.acoes.size(); i++) {
       AcaoSintatica acaoAtual = estado.acoes.get(i);
       // terminal pode ser, por exemplo, ABRE_CHAVE
-      if (terminal.equals(acaoAtual.terminal)) {
+      if (terminal.tipoToken.equals(acaoAtual.terminal) || terminal.conteudo.equals(acaoAtual.terminal)) {
         return i;
       }
     }
@@ -124,7 +126,7 @@ public class Validador {
     while (indexAcao == -1) {
       tokens.remove(0);
       tokenSendoAvaliado = tokens.get(0);
-      indexAcao = terminalExisteNoEstado(tokenSendoAvaliado.tipoToken, estadoSendoAvaliado);
+      indexAcao = terminalExisteNoEstado(tokenSendoAvaliado, estadoSendoAvaliado);
     }
   }
 
