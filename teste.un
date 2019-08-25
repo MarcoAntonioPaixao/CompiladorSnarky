@@ -1,0 +1,35 @@
+float numero_float = 23.33;
+
+int primeiro_numero = 1;
+int segundo_numero = 2;
+int resultado;
+int invalido = 404;
+
+boolean isTrue = true;
+boolean isPositive;
+
+resultado = primeiro_numero + segundo_numero ;
+
+if(resultado > ( primeiro_numero ) ) {
+      isPositive = true;
+      write(invalido);
+} else {
+      write(resultado);
+}
+
+int iterator = 1;
+int total = 1;
+int limit = 10;
+
+while(iterator <= ( limit ) ) {
+      write(iterator);
+      iterator = iterator + total;
+}
+
+if(![isTrue]) {
+      write(invalido);
+}
+
+if(isTrue && ( isPositive) ) {
+      write(isPositive);
+}
