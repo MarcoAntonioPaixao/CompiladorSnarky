@@ -2,13 +2,17 @@ float numero_float = 23.33;
 
 int primeiro_numero = 1;
 int segundo_numero = 2;
+int terceiro_numero = 3;
 int resultado;
+int resultado_dois;
 int invalido = 404;
 
 boolean isTrue = true;
 boolean isPositive;
 
-resultado = primeiro_numero + segundo_numero ;
+resultado = primeiro_numero + segundo_numero * terceiro_numero;
+
+resultado_dois = primeiro_numero / ( segundo_numero + terceiro_numero );
 
 if(resultado > ( primeiro_numero ) ) {
       isPositive = true;
@@ -20,8 +24,9 @@ if(resultado > ( primeiro_numero ) ) {
 int iterator = 1;
 int total = 1;
 int limit = 10;
+int begin = 1;
 
-while(iterator <= ( limit ) ) {
+while(limit >= ( iterator >= ( begin ) ) && ( iterator >= ( begin ) ) || ( iterator == ( begin ) ) ) {
       write(iterator);
       iterator = iterator + total;
 }

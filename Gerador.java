@@ -185,7 +185,7 @@ public class Gerador {
         estado21.acoes.add(new AcaoSintatica("VALOR_BOOLEANO", new Acao("empilhar", 34)));
         estado21.acoes.add(new AcaoSintatica("ABRE_PARENTESE", new Acao("empilhar", 37)));
         estado21.transicoes.add(new Transicao("OP_AR", 33));
-        estado21.transicoes.add(new Transicao("MID", 33));
+        estado21.transicoes.add(new Transicao("MID", 35));
         estado21.transicoes.add(new Transicao("INF", 36));
         tabela.estados.add(estado21);
 
@@ -289,10 +289,12 @@ public class Gerador {
         estado33.acoes.add(new AcaoSintatica("MENOS", new Acao("empilhar", 55)));
         tabela.estados.add(estado33);
 
+        // 34
         EstadoSintatico estado98 = new EstadoSintatico();
         estado98.acoes.add(new AcaoSintatica("PONTO_VIRGULA", new Acao("reduzir", 44)));
         tabela.estados.add(estado98);
 
+        // 35 -- etc.
         EstadoSintatico estado34 = new EstadoSintatico();
         estado34.acoes.add(new AcaoSintatica("PONTO_VIRGULA", new Acao("reduzir", 38)));
         estado34.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 38)));
@@ -302,6 +304,7 @@ public class Gerador {
         estado34.acoes.add(new AcaoSintatica("DIVIDIR", new Acao("empilhar", 57)));
         tabela.estados.add(estado34);
 
+        // 36
         EstadoSintatico estado35 = new EstadoSintatico();
         estado35.acoes.add(new AcaoSintatica("PONTO_VIRGULA", new Acao("reduzir", 41)));
         estado35.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 41)));
@@ -319,6 +322,7 @@ public class Gerador {
         estado36.transicoes.add(new Transicao("INF", 36));
         tabela.estados.add(estado36);
 
+        // 38
         EstadoSintatico estado37 = new EstadoSintatico();
         estado37.acoes.add(new AcaoSintatica("PONTO_VIRGULA", new Acao("reduzir", 43)));
         estado37.acoes.add(new AcaoSintatica("FECHA_PARENTESE", new Acao("reduzir", 43)));

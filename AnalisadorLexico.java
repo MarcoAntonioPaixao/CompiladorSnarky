@@ -59,9 +59,7 @@ class AnalisadorLexico {
 
         } else if (ehTokenValido(conteudoArquivo.charAt(i))) {
 
-          // System.out.println("Adicionei tipo de token extra");
           Token token = Token.identificaTipoToken(conteudoArquivo.charAt(i));
-          i += token.conteudo.length() - 1;
           token.numLinha = numeroLinha;
           tokens.add(token);
 
