@@ -34,7 +34,3 @@ while(limit >= ( iterator >= ( begin ) ) && ( iterator >= ( begin ) ) || ( itera
 if(![isTrue]) {
       write(invalido);
 }
-
-if(isTrue && ( isPositive) ) {
-      write(isPositive);
-}
