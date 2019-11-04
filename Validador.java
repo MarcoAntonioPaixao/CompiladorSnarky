@@ -116,7 +116,7 @@ public class Validador {
     Token tokenSendoAvaliado;
     int indexAcao = -1;
 
-    while (indexAcao == -1) {
+    while (indexAcao == -1 && tokens.size() > 0) {
       tokens.remove(0);
       tokenSendoAvaliado = tokens.get(0);
       indexAcao = terminalExisteNoEstado(tokenSendoAvaliado, estadoSendoAvaliado);
