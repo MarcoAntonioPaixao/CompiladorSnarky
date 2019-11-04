@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * Validador
@@ -51,8 +50,6 @@ public class ValidadorSemantico {
         } catch (Exception e) {
           errosSintaticos.add(e);
         }
-      } else if (tokens.get(iterator).tipoToken.equals("IF") || tokens.get(iterator).tipoToken.equals("WHILE")) {
-        // verificar que a expressão de controle é válida
       } else if (tokens.get(iterator).tipoToken.equals("WRITE") || tokens.get(iterator).tipoToken.equals("READ")) {
         // garante que a variável sendo lida/escrita é int ou float
         try {
